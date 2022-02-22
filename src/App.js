@@ -101,6 +101,7 @@ function App() {
         ) : (
           ""
         )}
+        <footer>Created by Eugene Nam</footer>
       </main>
     </div>
   );

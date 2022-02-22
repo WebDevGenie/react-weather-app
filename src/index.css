@@ -138,3 +138,11 @@ main {
   color: #ffffff;
   font-size: 1.5rem;
 }
+
+footer {
+  position: fixed;
+  bottom: 0;
+
+  font-weight: 600;
+  color: #ffffff;
+}
