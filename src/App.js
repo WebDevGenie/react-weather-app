@@ -92,8 +92,8 @@ function App() {
               <div className="recommendation">
                 {typeof weather.main != "undefined"
                   ? weather.main.temp < 16
-                    ? "It's Cold! You should wear a jacket!"
-                    : "It's Hot! Wear a singlet!"
+                    ? "It's Cold! You should wear a jacket!" : weather.main.temp > 25 ? "It's REALLY Hot!"
+                    : "Ahhhh~ Perfect weather!"
                   : ""}
               </div>
             </div>
