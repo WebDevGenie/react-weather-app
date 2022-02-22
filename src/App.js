@@ -1,5 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+
+const api = {
+  key: "fb0f8cfd630ee7897eef784327ec88d0",
+  base: "https://api.openweathermap.org/data/2.5/",
+};
 
 function App() {
   const [query, setQuery] = useState("");
