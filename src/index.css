@@ -36,7 +36,7 @@ main {
 .search-box {
   text-align: center;
   width: 100%;
-  margin: 0 0 75px;
+  margin: 0 0 30px;
 }
 
 .search-box .search-bar {
@@ -83,8 +83,6 @@ main {
 }
 
 .weather-box {
-  display: block;
-  justify-content: center;
   text-align: center;
   width: 100%;
 }
@@ -115,11 +113,18 @@ main {
 }
 
 .header {
+  display: inline;
+  justify-content: center;
+
   font-size: 2rem;
   text-align: center;
   color:rgb(255, 255, 255, 1);
   text-shadow: 3px 3px rgba(0, 0, 0, 0.75);
-  padding-bottom: 50px;
+}
+
+.logo img {
+  max-width: 200px;
+  max-height: 200px;
 }
 
 @media screen and (max-width: 600px) {
@@ -130,7 +135,7 @@ main {
     background-image: url(./assets/cold.jpg);
   }
   .header {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 }
 

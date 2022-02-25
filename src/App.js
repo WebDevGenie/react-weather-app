@@ -76,15 +76,18 @@ function App() {
           />
         </div>
         <div className="header">
-          <h1>Weather App</h1>
+          <div className="logo">
+            <img src={require('./assets/logo.png')} alt="Weather App Logo" srcset="" />
+          </div>
+          <div className="appTitle">Weather App</div>
         </div>
         {typeof weather.main != "undefined" ? (
           <div>
             <div className="location-box">
               <div className="location">
-                {weather.name}, {weather.sys.country}
+                Location: {weather.name}, {weather.sys.country}
               </div>
-              <div className="date">{dateBuilder(new Date())}</div>
+              <div className="date">Date: {dateBuilder(new Date())}</div>
             </div>
             <div className="weather-box">
               <div className="temp">{Math.round(weather.main.temp)}°C</div>
@@ -92,7 +95,8 @@ function App() {
               <div className="recommendation">
                 {typeof weather.main != "undefined"
                   ? weather.main.temp < 16
-                    ? "It's Cold! You should wear a jacket!" : weather.main.temp > 25 ? "It's REALLY Hot!"
+                    ? "It's Cold! You should wear a jacket!" : weather.main.temp > 30 ? "Umm... I would stay inside..." 
+                    : weather.main.temp > 26 ? "It's Hot! Wear a singlet!"
                     : "Ahhhh~ Perfect weather!"
                   : ""}
               </div>
