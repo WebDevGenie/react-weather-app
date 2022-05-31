@@ -1,3 +1,4 @@
+import { type } from "@testing-library/user-event/dist/type";
 import React, { useState } from "react";
 
 const api = {
@@ -65,6 +66,16 @@ function App() {
       }
     >
       <main>
+        <div className="header">
+          <div className="logo">
+            <img
+              src={require("./assets/logo.png")}
+              alt="Weather App Logo"
+              srcset=""
+            />
+          </div>
+          <div className="appTitle">Weather App</div>
+        </div>
         <div className="search-box">
           <input
             type="text"
@@ -75,12 +86,6 @@ function App() {
             onKeyPress={search}
           />
         </div>
-        <div className="header">
-          <div className="logo">
-            <img src={require('./assets/logo.png')} alt="Weather App Logo" srcset="" />
-          </div>
-          <div className="appTitle">Weather App</div>
-        </div>
         {typeof weather.main != "undefined" ? (
           <div>
             <div className="location-box">
@@ -90,13 +95,21 @@ function App() {
               <div className="date">Date: {dateBuilder(new Date())}</div>
             </div>
             <div className="weather-box">
-              <div className="temp">{Math.round(weather.main.temp)}°C</div>
+              <div className="temp">
+                Temp: {Math.round(weather.main.temp)}°C
+              </div>
+              <div className="feels-like">
+                Feels Like {Math.round(weather.main.feels_like)}°C
+              </div>
               <div className="weather">{weather.weather[0].main}</div>
               <div className="recommendation">
                 {typeof weather.main != "undefined"
                   ? weather.main.temp < 16
-                    ? "It's Cold! You should wear a jacket!" : weather.main.temp > 30 ? "Umm... I would stay inside..." 
-                    : weather.main.temp > 26 ? "It's Hot! Wear a singlet!"
+                    ? "It's Cold! You should wear a jacket!"
+                    : weather.main.temp > 30
+                    ? "Umm... I would stay inside..."
+                    : weather.main.temp > 26
+                    ? "It's Hot! Wear a singlet!"
                     : "Ahhhh~ Perfect weather!"
                   : ""}
               </div>
